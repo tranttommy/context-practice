@@ -1,5 +1,4 @@
 export default function CounterControls({ increment, decrement, setInterval, interval, reset }) {
-  console.log('CounterControls render')
   return (
     <div>
       <button onClick={decrement}>-</button>

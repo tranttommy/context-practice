@@ -1,8 +1,4 @@
-export const ACTION = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
-  SET_INTERVAL: 'SET_INTERVAL',
-}
+import * as ACTION from './constants'
 
 export const increment = () => ({
   type: ACTION.INCREMENT,
@@ -17,3 +13,6 @@ export const setInterval = (interval) => ({
   payload: interval,
 })
 
+export const reset = () => ({
+  type: ACTION.RESET
+})
