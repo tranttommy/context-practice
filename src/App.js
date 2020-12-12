@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { ContextProvider } from './context'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+// import CounterPage from './pages/CounterPage'
+// import HomePage from './pages/HomePage'
+import { routes } from './routes'
 
-function App() {
+export default function App() {
+  console.log('App render')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ContextProvider>
+      <Router>
+        <Switch>
+          {routes.map((route) => (
+            <Route key={route.name} {...route} />
+          ))}
+        </Switch>
+      </Router>
+    </ContextProvider>
+  )
 }
-
-export default App;
